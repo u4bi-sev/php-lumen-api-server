@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>php slim client</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>        
+    </head>
+    <body>
+        
+        <script>
+        
+        
+            axios({
+                method:'GET',
+                url:'http://localhost:7799/server/item/ABCD'
+            })
+            .then(function(response) {
+                console.log('GET', response.data);
+            });
+
+
+
+            axios({
+                method:'POST',
+                url:'http://localhost:7799/server/item',
+                data: {
+                    name: 'ABCD',
+                    price: 5000
+                }
+            })
+            .then(function(response) {
+                console.log('POST', response.data);
+            });
+
+
+
+            axios({
+                method:'PUT',
+                url:'http://localhost:7799/server/item/ABCD',
+                data: {
+                    price: 1234
+                }
+            })
+            .then(function(response) {
+                console.log('PUT', response.data);
+            });
+
+
+
+            axios({
+                method:'DELETE',
+                url:'http://localhost:7799/server/item/ABCD'
+            })
+            .then(function(response) {
+                console.log('DELETE', response.data);
+            });
+
+        </script>
+    </body>
+</html>
